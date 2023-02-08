@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="myCss.css">
+    <title>Websocket chat</title>
+</head>
+<body>
+
+    <div class="container-fluid h-100">
+        <div class="row justify-content-center h-10">
+            <button class="btn btn-success"  id="Connect">Connect</button>
+            <button class="btn btn-danger" hidden id="Disconnect">Disconnect</button>
+        </div>
+        <div class="row justify-content-center h-10">
+            <div hidden class="alert alert-danger" id="alert_danger" role="alert">
+                Status: Disconnected
+            </div>
+            <div hidden class="alert alert-success" id="alert_success" role="alert">
+               Status: Connected
+            </div>
+            
+        </div>
+        <div class="row justify-content-center h-90">
+            <div hidden id="box_message" class="col-md-8 col-xl-6 chat">
+                <div class="card">
+                    <div class="card-header msg_head">
+                        <div class="d-flex bd-highlight">
+                            <div class="img_cont">
+                                <img src="https://static.turbosquid.com/Preview/001292/481/WV/_D.jpg" class="rounded-circle user_img">
+                                <span class="online_icon"></span>
+                            </div>
+                            <div class="user_info">
+                                <span>Websocket - Chat</span>
+                               
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body msg_card_body">
+                        <div class="d-flex justify-content-start mb-4">
+                            
+                            <div id="message_container" class="msg_cotainer"> </div>
+                        </div>
+                        
+                    <div class="card-footer">
+                        <div class="input-group">
+                            <div class="input-group-append">
+                                <span class="input-group-text attach_btn"><i class="fas fa-paperclip"></i></span>
+                            </div>
+                            <textarea id="message_input" name="message_input" class="form-control type_msg" placeholder="Type your message..."></textarea>
+                            <div class="input-group-append">
+                                <button name="send_message" type="submit" class= "btn send_btn">Send</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <script type="application/javascript" src="websockets_client.js"></script>
+</body>
+
+</html>
